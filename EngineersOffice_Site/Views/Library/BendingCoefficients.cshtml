@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EngineersOffice_Library.Models.BendingCoefficient>
+
+@{
+    Layout = "_LayoutLibrary";
+}
+
+<h1>Коэффициенты φ продольного изгиба центрально-сжатых элементов (Значения φ увеличены в 1000 раз)</h1>
+<div class="library-table">
+    <table border="1" class="table">
+        <thead>
+            <tr>
+                <td rowspan="2">Гибкость λ</td>
+                <td colspan="14">Коэффициенты φ для элементов с расчетным сопротивлением Ry, МПа</td>
+            </tr>
+            <tr>
+                <td>200</td>
+                <td>220</td>
+                <td>240</td>
+                <td>260</td>
+                <td>280</td>
+                <td>300</td>
+                <td>320</td>
+                <td>340</td>
+                <td>360</td>
+                <td>380</td>
+                <td>400</td>
+                <td>440</td>
+                <td>480</td>
+                <td>520</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="50">@item.Flexibility</td>
+                    <td width="50">@item.R_200</td>
+                    <td width="50">@item.R_220</td>
+                    <td width="50">@item.R_240</td>
+                    <td width="50">@item.R_260</td>
+                    <td width="50">@item.R_280</td>
+                    <td width="50">@item.R_300</td>
+                    <td width="50">@item.R_320</td>
+                    <td width="50">@item.R_340</td>
+                    <td width="50">@item.R_360</td>
+                    <td width="50">@item.R_380</td>
+                    <td width="50">@item.R_400</td>
+                    <td width="50">@item.R_440</td>
+                    <td width="50">@item.R_480</td>
+                    <td width="50">@item.R_520</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

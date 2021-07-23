@@ -1,0 +1,1102 @@
+﻿@font-face {
+    font-family: 'Montserrat-regular';
+    src: url('fonts/montserrat-regular-webfont.woff2') format('woff2'), url('fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-semibold';
+    src: url('fonts/montserrat-semibold-webfont.woff2') format('woff2'), url('fonts/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-bold';
+    src: url('fonts/montserrat-bold-webfont.woff2') format('woff2'), url('fonts/montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-extrabold';
+    src: url('fonts/montserrat-extrabold-webfont.woff2') format('woff2'), url('fonts/montserrat-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --engineer-orange: #f25608;
+    --engineer-green: #61b278;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    background-color: #e5e5e5 !important;
+    font-family: "Montserrat-semibold", "Arial", sans-serif !important;
+    min-height:100%;
+}
+body {
+    background-color: #e5e5e5 !important;
+    font-family: "Montserrat-semibold", "Arial", sans-serif !important;
+}
+
+h2 {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h3 {
+    font-family: "Montserrat-bold", "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.container {
+    padding: 0 75px 0 75px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1920px;
+    background-color: white;
+}
+
+
+
+
+.input-validation-error {
+    border-color: red;
+}
+.text-danger{
+    margin-top:5px;
+    color:red;
+    font-size:14px;
+}
+
+.hide{
+    display:none !important;
+}
+/* Header /////////////////////////////////////////////////////*/
+.header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.header-logo{
+    position:relative;
+    height:100%;
+}
+
+.header-nav-menu {
+    display:flex;
+    padding-left:30px;
+    width:100%;
+    height:100%;
+}
+
+.header-nav-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-nav-item {
+    margin: 0 40px 0 40px;
+    font-size: 20px;
+}
+
+.header-nav-link {
+    padding-bottom: 12px;
+    color: #333;
+    white-space:nowrap;
+}
+
+.header-login-out{
+    margin-left:auto;
+}
+.header-login-out-item {
+    white-space: nowrap;
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.header-login-out-button {
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: 0;
+    color: rgb(14, 2, 240);
+    display: flex;
+}
+
+.header-login-in-button {
+    display: flex;
+}
+
+.header-logout-icon {
+    margin-top: 2px;
+    margin-left: 5px;
+    color: var(--engineer-orange);
+}
+
+.header-login-icon {
+    margin-left: 5px;
+    color: var(--engineer-green);
+}
+
+/* loader /////////////////////////////////////////////////////*/
+.loaderbody {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128,128,128,0.2);
+    z-index: 100;
+}
+
+.loader{
+    margin-left:auto;
+    margin-right:auto;
+    border:16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius:50%;
+    width:80px;
+    height:80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* Slider /////////////////////////////////////////////////////*/
+.swiper-container {
+    max-width: 1770px;
+    height: 620px;
+}
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-background {
+    background: url(../img/slider_background.svg);
+}
+
+.slider-info {
+    margin-top: 80px;
+    margin-left: 5%;
+    max-width: 875px;
+    color: white;
+    text-shadow: 
+        black 1px 1px 0, 
+        black -1px -1px 0,
+        black -1px 1px 0,
+        black 1px -1px 0;
+}
+
+.slider-info-decrtiption {
+    margin-left: 11px;
+    font-family: "Montserrat-bold", "Arial", sans-serif;
+    font-size: 23.46px;
+    line-height: 28.6px;
+}
+
+.slider-info-head {
+    margin-left: 12px;
+    font-family: "Montserrat-extrabold", "Arial", sans-serif;
+    font-size: 70.37px;
+    line-height: 85.79px;
+}
+
+.slider-btn {
+    margin-left: 28%;
+    margin-bottom: 20px;
+    outline: none;
+    border: 0;
+    height: 50px;
+    width: 220px;
+    background-color: rgba(242, 86, 8, 0.85);
+    font-size: 18px;
+    color: white;
+}
+
+
+/* aboutUs /////////////////////////////////////////////////////*/
+.section-aboutUs {
+    padding-top: 100px;
+    padding-bottom:30px;
+}
+
+.aboutUs-info {
+    margin-top: 20px;
+    max-width: 1230px;
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.aboutUs-pictures {
+    display: flex;
+    width: 100%;
+}
+
+.aboutUs-engineer {
+    margin-right:15px;
+    position:relative;
+    background-image: url(../img/aboutUs_engineer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:50%;
+}
+
+.aboutUs-engineer-discription {
+    position:absolute;
+    bottom:0;
+    padding:10px 20px 10px 40px;
+    display: flex;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.aboutUs-engineer-info {
+    margin-left:20px;
+    font-size: 16px;
+    line-height:32px;
+    color: white;
+}
+
+.aboutUs-cards {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.aboutUs-cards-item {
+    margin-left: 15px;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 295px;
+    border: var(--engineer-green) solid 1px;
+}
+
+.aboutUs-cards-item:not(:last-child){
+    margin-bottom:30px;
+}
+
+.aboutUs-cards-description {
+    margin-top: 17px;
+    margin-left: auto;
+    width: 400px;
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.aboutUs-cards-description-head {
+    font-family: "Montserrat-bold", "Arial", sans-serif;
+    font-size: 24px;
+}
+.aboutUs-icon {
+    width: 120px;
+    fill: var(--engineer-orange);
+}
+
+
+/* howWeWork /////////////////////////////////////////////////////*/
+.section-howWeWork {
+    padding-top: 40px;
+    padding-bottom: 230px;
+}
+.howWeWork-nav{
+    margin-top:20px;
+}
+.howWeWork-nav-list{
+    display:flex;
+}
+
+.howWeWork-nav-item {
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    white-space: nowrap;
+    font-size: 18px;
+}
+
+.howWeWork-nav-item:not(:last-child){
+  margin-right: 75px;
+}
+
+.tabs_btn {
+    background-color: transparent;
+    border: 0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content-active {
+    display: block;
+}
+
+.howWeWork-cards {
+    display: flex;
+}
+.howWeWork-description {
+    margin-top: 35px;
+    margin-right:20px;
+    width: 50%;
+}
+.howWeWork-description-text {
+    max-width: 75%;
+    font-family: "Montserrat-regular", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.howWeWork-description-head {
+    font-family: "Montserrat-bold", "Arial", sans-serif;
+    font-size: 24px;
+}
+
+.howWeWork-btn {
+    outline: none;
+    border: 0;
+    height: 50px;
+    width: 220px;
+    background-color: rgba(242, 86, 8, 0.8);
+    font-size: 16px;
+    color: white;
+}
+
+.howWeWork-pic {
+    margin-top: 35px;
+    width:50%;
+}
+
+.howWeWork-img {
+    width: 100%;
+}
+
+
+/* contacts /////////////////////////////////////////////////////*/
+.section-contacts{
+    padding:40px 75px 200px 75px;
+}
+
+/* calculations /////////////////////////////////////////////////////*/
+.calculations-container{
+    display:flex;
+}
+.section-calcMenu {
+    padding: 20px;
+    width: 25%;
+}
+
+.calculation-list-title {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font: "Montserrat-bold", "Arial", sans-serif;
+    color: white;
+    background-color: #222;
+}
+
+.calculation-list-item {
+    border-bottom: 1px solid #eee;
+}
+
+.calculation-list-link {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(242, 86, 8, 0.8);
+}
+.section-calculations {
+    width: 75%;
+    padding: 20px 20px 210px 20px;
+}
+
+.calculations-title {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/*Volume*/
+.calculations-volume-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.calculations-volume-item {
+    margin-top:20px;
+    padding: 15px;
+    width:48%;
+    background-color: azure;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.calculations-volume-item-title{
+    width:100%;
+    text-align:center;
+}
+.calculations-volume-item:nth-child(2n-1) {
+    margin-right: 20px;
+}
+.calculations-volume-item-data{
+    display:flex;
+}
+.calculations-volume-designModel {
+    width: 50%;
+    height: 50%;
+    border: 1px solid var(--engineer-green);
+}
+.calculations-volume-form {
+    margin:auto;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 50%;
+    height: 50%;
+}
+
+.calculations-volume-inputRaw {
+    display: flex;
+    justify-content: center;
+}
+
+.calculations-volume-input {
+    width: 75%;
+    height: 25px;
+}
+
+.calculations-btn {
+    margin-top:10px;
+    width: 150px;
+    height: 35px;
+    outline: none;
+    border: 0;
+    background-color: rgba(242, 86, 8, 0.8);
+    font-size: 16px;
+    color: white;
+}
+
+.calculationsResult-btn {
+    margin-top: 10px;
+    height: 35px;
+    outline: none;
+    border: 0;
+    background-color: var(--engineer-green);
+    font-size: 16px;
+    color: white;
+}
+
+
+.calculations-volume-result{
+    margin-top:10px;
+    padding-top:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    border-top:1px solid black;
+}
+
+
+
+
+/*Traverse*/
+.calculations-traverse-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.calculations-traverse-item {
+    position:relative;
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;
+    background-color: azure;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.calculations-traverse-item-title {
+    width: 100%;
+    text-align: center;
+}
+.calculations-traverse-item-data {
+    display: flex;
+}
+.calculations-traverse-designModel {
+    width: 50%;
+    height: 50%;
+    border: 1px solid var(--engineer-green);
+}
+.calculations-traverse-form {
+    width:100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.calculations-traverse-form-inputRaw {
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    width:100%;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.calculations-traverse-input {
+    margin-left:5px;
+    width: 40%;
+    height:25px;
+}
+.calculations-traverse-result {
+    margin-top: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.calculations-traverse-list-item {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.calculations-traverse-result-Wx{
+    padding:10px;
+    border:solid 1px var(--engineer-orange);
+}
+
+
+/*Library*/
+
+.library-table{
+    width:100%;
+    font-size:14px;
+}
+
+
+
+
+/* account (login, register) /////////////////////////////////////////////////////*/
+.container-account {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 400px;
+    background-color: white;
+}
+
+.container-onePageBody {
+    height: 70vh;
+}
+
+.card-header-tabs {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.nav-item{
+    margin:0;
+    width:100%;
+}
+
+.nav-link{
+    width:100%;
+}
+
+.login-form-icon {
+    margin-left: auto;
+    margin-right: auto;
+    width: min-content;
+}
+
+/* footer /////////////////////////////////////////////////////*/
+.footer {
+    position: absolute;
+    bottom:0;
+    display:flex;
+    padding: 40px 75px 40px 75px;
+    background-color: #222;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+}
+
+.footer-logo {
+    width: 300px;
+    height: 100px;
+}
+.footer-left-list {
+    margin-top: 16px;
+    padding-left:30px;
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100px;
+}
+
+.footer-left-list-item {
+    margin: 0 40px 0 40px;
+}
+
+.footer-left-link {
+    display: flex;
+    font-family: "Montserrat-semibold", "Arial", sans-serif;
+    font-size: 20px;
+    color: white;
+    white-space:nowrap;
+}
+
+.footer-left-icon{
+    margin-left:5px;
+    color:var(--engineer-orange);
+}
+.footer-rigth {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+
+.footer-right-head {
+    margin-left: auto;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 25px;
+    font-family: "Montserrat-semibold", "Arial", sans-serif;
+}
+
+.footer-right-social {
+    margin-left: auto;
+    display: flex;
+    flex-direction:column;
+}
+
+.footer-right-icon {
+    margin-bottom:15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+
+.icon_telegram {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.icon_vk {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* ховер и фокус эффекты ///////////////////////////////////////////// */
+.hover-stroke-engineer_orange:hover {
+    cursor: pointer;
+    border-bottom: 2px var(--engineer-orange) solid;
+}
+
+.hover-engineer_orange-color:hover {
+    cursor: pointer;
+    color: var(--engineer-orange);
+}
+
+.hover-engineer_orange-backgroundcolor:hover {
+    cursor: pointer;
+    background-color: var(--engineer-orange);
+}
+
+.hover-engineer_orange-fill:hover {
+    cursor: pointer;
+    fill: var(--engineer-orange);
+}
+
+.hover-engineer_orange-stroke:hover {
+    cursor: pointer;
+    stroke: var(--engineer-orange);
+}
+
+.focus-engineer_green-outline:focus {
+    outline: 3px solid var(--engineer-green);
+}
+
+.focus-deepBlue-outline:focus {
+    outline: 3px solid rgb(14, 2, 240)
+}
+
+/* media ///////////////////////////////////////////// */
+@media  (min-width:1025px)  and (max-width:1280px) {
+
+    .html{
+        font-size:14px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 1280px;
+    }
+    .header-nav-menu {
+        padding-left: 10px;
+    }
+    .header-logo{
+        width:250px;
+    }
+    .header-nav-item {
+        margin: 0 20px 0 20px;
+        font-size: 14px;
+    }
+
+    .header-login-out-item {
+        font-size: 14px;
+    }
+    .header-login-out-button {
+        font-size: 14px;
+    }
+
+    .swiper-container {
+        max-width: 1130px;
+        height: 420px;
+    }
+
+    .slider-info {
+        margin-left: 5%;
+        max-width: 675px;
+    }
+
+    .slider-info-decrtiption {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .slider-info-head {
+        font-size: 34px;
+        line-height: 45px;
+    }
+
+    .aboutUs-cards-item {
+        margin-left: 15px;
+        padding:45px;
+    }
+
+    .aboutUs-cards-description{
+        width:250px;
+    }
+    .footer {
+        padding: 15px 75px 15px 75px;
+    }
+
+    .footer-logo {
+        width: 250px;
+    }
+
+    .footer-left-list{
+        margin-top:5px;
+    }
+    .footer-left-list-item {
+        margin: 0 15px 0 15px;
+    }
+
+    .footer-left-link {
+        font-size: 14px;
+    }
+
+    .footer-right-head {
+        color: white;
+        font-size: 18px;
+    }
+
+
+    .footer-right-icon {
+        margin-bottom: 15px;
+        font-size: 10px;
+    }
+
+    .icon_telegram {
+        width: 20px;
+    }
+
+    .icon_vk {
+        width: 20px;
+    }
+
+    .calculation-list-link{
+        font-size:14px;
+    }
+
+    .calculations-traverse-label{
+        width:60%;
+        font-size:14px;
+        text-align:right;
+    }
+
+    .library-table {
+        font-size: 12px;
+    }
+    .table td{
+        padding:0.45em;
+    }
+}
+
+@media (min-width:721px) and (max-width:1024px) {
+
+    .html {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 1024px;
+        padding: 0 50px 0 50px;
+    }
+
+    .header-nav-menu {
+        padding-left: 5px;
+    }
+
+    .header-logo {
+        width: 200px;
+    }
+
+    .header-nav-item {
+        margin: 0 10px 0 10px;
+        font-size: 12px;
+    }
+
+    .header-login-out-item {
+        font-size: 12px;
+    }
+
+    .header-login-out-button {
+        font-size: 12px;
+    }
+
+    .swiper-container {
+        max-width: 924px;
+        height: 320px;
+    }
+
+    .slider-info {
+        margin-left: 5%;
+        max-width: 475px;
+    }
+
+    .slider-info-decrtiption {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .slider-info-head {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h2{
+        font-size:30px;
+    }
+
+    .aboutUs-info {
+        margin-top: 20px;
+        max-width: 924px;
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .aboutUs-engineer {
+        margin-right: 10px;
+        max-height:420px;
+    }
+
+    .aboutUs-engineer-discription {
+        padding: 5px 10px 5px 20px;
+        width: 100%;
+    }
+
+    .aboutUs-engineer-info {
+        margin-left: 10px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .aboutUs-cards-item {
+        margin-left: 10px;
+        height: 200px;
+        padding:20px;
+    }
+
+    .aboutUs-cards-item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .aboutUs-cards-description {
+        margin-top: 10px;
+        max-width: 285px;
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    .aboutUs-cards-description-head {
+        font-size: 20px;
+    }
+
+    .aboutUs-icon {
+        height:80px;
+        width: 80px;
+    }
+
+    .howWeWork-nav-item {
+        font-size: 16px;
+    }
+
+    .howWeWork-nav-item:not(:last-child) {
+        margin-right: 50px;
+    }
+
+    .howWeWork-description {
+        margin-top: 35px;
+        margin-right: 20px;
+        width: 30%;
+    }
+
+    .howWeWork-description-text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    .howWeWork-description-head {
+        font-size: 20px;
+    }
+
+    .howWeWork-pic {
+        width:70%;
+    }
+
+    .footer {
+        padding: 15px 50px 15px 50px;
+    }
+
+    .footer-logo {
+        width: 200px;
+        height: 75px;
+    }
+
+    .footer-left-list {
+        margin-top: 5px;
+    }
+
+    .footer-left-list-item {
+        margin: 0 15px 0 15px;
+    }
+
+    .footer-left-link {
+        font-size: 12px;
+    }
+
+    .footer-right-head {
+        color: white;
+        font-size: 16px;
+    }
+
+
+    .footer-right-icon {
+        margin-bottom: 15px;
+        font-size: 10px;
+    }
+
+    .icon_telegram {
+        width: 20px;
+    }
+
+    .icon_vk {
+        width: 20px;
+    }
+
+    .calculation-list-link {
+        font-size: 12px;
+    }
+
+    .calculations-btn {
+        width: 100px;
+        height: 25px;
+        font-size: 14px;
+    }
+    .calculations-volume-result{
+        font-size:14px;
+    }
+
+    .calculations-traverse-label {
+        width: 90%;
+        font-size: 14px;
+        text-align: right;
+    }
+
+    .library-table {
+        font-size: 11px;
+        line-height:12px;
+
+    }
+
+    .table td{
+       padding:0.45em;
+    }
+}
+
+

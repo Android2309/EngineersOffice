@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "_Layout";
+}
+<main class="calculations-container">
+    <section class="section-calcMenu">
+        <ul class="calculation-menu-list">
+            <li class="calculation-list-item">
+                <div class="calculation-list-title">Разделы:</div>
+            </li>
+            <li class="calculation-list-item">
+                <a asp-action="Beams" asp-controller="Library" class="calculation-list-link hover-engineer_orange-backgroundcolor" style="font-size:14px">Двутавры ГОСТ 26020-83</a>
+            </li>
+            <li class="calculation-list-item">
+                <a asp-action="BendingCoefficients" asp-controller="Library" class="calculation-list-link hover-engineer_orange-backgroundcolor" style="font-size:14px">Коэффициенты φ продольного изгиба центрально-сжатых элементов</a>
+            </li>
+            <li class="calculation-list-item">
+                <a asp-action="SteelGrades" asp-controller="Library" class="calculation-list-link hover-engineer_orange-backgroundcolor" style="font-size:16px">Марочник сталей</a>
+            </li>
+        </ul>
+    </section>
+    <section class="section-calculations">
+        @RenderBody()
+    </section>
+</main>

@@ -1,0 +1,38 @@
+﻿
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+
+<main class="container section-contacts">
+    <h2>Наш адрес:</h2>
+    <p>Франция, Иль-де-Франс, Париж, X округ Парижа, улица дю Фобур Сен Дени 54</p>
+
+    <div id="map" style="width: 600px; height: 400px; margin-left:auto; margin-right:auto;"></div>
+    <script type="text/javascript">
+        //yandex-map
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [48.87219657376512, 2.354223999999991],
+                zoom: 17
+            });
+
+            var myPlacemark = new ymaps.Placemark(
+                [48.87219657376512, 2.354223999999991],
+                {
+                    balloonContentHeader: 'HomeWork21',
+                    balloonContentBody: 'Evklid corp.: Франция, Иль-де-Франс, Париж, X округ Парижа, улица дю Фобур Сен Дени 54',
+                    balloonContentFooter: 'HomeWork21',
+                    hintContent: 'HomeWork21'
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: '/img/map_mark.svg',
+                    iconImageSize: [30, 42],
+                    iconImageOffset: [-3, -42]
+                }
+            );
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+</main>

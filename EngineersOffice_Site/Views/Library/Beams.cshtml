@@ -1,0 +1,61 @@
+﻿@model IEnumerable<EngineersOffice_Library.Models.MetalAssortment.Beam>
+
+@{
+    Layout = "_LayoutLibrary";
+}
+
+<h1>ДВУТАВРЫ СТАЛЬНЫЕ ГОРЯЧЕКАТАНЫЕ С ПАРАЛЛЕЛЬНЫМИ ГРАНЯМИ ПОЛОК ГОСТ 26020-83</h1>
+<p></p>
+<div class="library-table">
+    <table border="1" class="table">
+        <thead>
+            <tr>
+                <td rowspan="3">Номер профиля</td>
+                <td colspan="5">мм</td>
+                <td rowspan="3">Площадь сечения, см<sup>2</sup> </td>
+                <td rowspan="3">Линейная плотность, кг/м</td>
+                <td colspan="7">Справочные величины для осей</td>
+            </tr>
+            <tr>
+                <td rowspan="2">h</td>
+                <td rowspan="2">b</td>
+                <td rowspan="2">s</td>
+                <td rowspan="2">t</td>
+                <td rowspan="2">r</td>
+                <td colspan="4">X-X</td>
+                <td colspan="3">Y-Y</td>
+            </tr>
+            <tr>
+                <td>I<sub>x</sub>, см<sup>4</sup></td>
+                <td>W<sub>x</sub>, см<sup>3</sup></td>
+                <td>S<sub>x</sub>, см<sup>3</sup></td>
+                <td>i<sub>x</sub>, см</td>
+                <td>I<sub>y</sub>, см<sup>4</sup></td>
+                <td>W<sub>y</sub>, см<sup>3</sup></td>
+                <td>i<sub>y</sub>, см</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="50">@item.Number</td>
+                    <td width="50">@item.h</td>
+                    <td width="50">@item.b</td>
+                    <td width="50">@item.s</td>
+                    <td width="50">@item.t</td>
+                    <td width="50">@item.r</td>
+                    <td width="50">@item.F</td>
+                    <td width="50">@item.lineDensity</td>
+                    <td width="50">@item.Ix</td>
+                    <td width="50">@item.Wx</td>
+                    <td width="50">@item.Sx</td>
+                    <td width="50">@item.i_x</td>
+                    <td width="50">@item.Iy</td>
+                    <td width="50">@item.Wy</td>
+                    <td width="50">@item.i_y</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

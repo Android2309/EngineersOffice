@@ -1,0 +1,77 @@
+﻿<Window x:Class="EngineersOffice_WpfDesktopClient.Windows.AddBeamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EngineersOffice_WpfDesktopClient.Windows"
+        mc:Ignorable="d"
+        Title="Добавить двутавр" Height="350" Width="700" MinHeight="350" MinWidth="600" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="textBlock">
+            <Setter Property="Margin" Value="0 10 0 0"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="textBox">
+            <Setter Property="Margin" Value="5 10 5 0"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <TextBlock Text="Стандарт:" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Номер балки:" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Высота профиля (h, мм):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Ширина профиля (b, мм):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Толщина стенки (s, мм):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Толщина полки (t, мм):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="радиус сопряжения (r, мм):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Площадь сечения (F, см^2):" Style="{StaticResource textBlock}"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <TextBox x:Name="tbStandart" Style="{StaticResource textBox}" />
+            <TextBox x:Name="tbNumber" Style="{StaticResource textBox}" />
+            <TextBox x:Name="tb_h" Style="{StaticResource textBox}" Text="{Binding Path=h, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_b" Style="{StaticResource textBox}" Text="{Binding Path=b, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_s" Style="{StaticResource textBox}" Text="{Binding Path=s, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_t" Style="{StaticResource textBox}" Text="{Binding Path=t, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_r" Style="{StaticResource textBox}" Text="{Binding Path=r, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_F" Style="{StaticResource textBox}" Text="{Binding Path=F, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="0">
+            <TextBlock Text="Линейная плотность (кг/м):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Момент инерции (Ix, см^4):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Момент инерции (Iy, см^4):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Момент сопротивления (Wx, см^3):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Момент сопротивления (Wy, см^3):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Статический момент (Sx, см^3):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Радиус инерции (i_x, см):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Радиус инерции (i_y, см):" Style="{StaticResource textBlock}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="0">
+            <TextBox x:Name="tbLineDensity" Style="{StaticResource textBox}" Text="{Binding Path=lineDensity, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_Ix" Style="{StaticResource textBox}" Text="{Binding Path=Ix, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_Iy" Style="{StaticResource textBox}" Text="{Binding Path=Iy, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_Wx" Style="{StaticResource textBox}" Text="{Binding Path=Wx, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_Wy" Style="{StaticResource textBox}" Text="{Binding Path=Wy, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_Sx" Style="{StaticResource textBox}" Text="{Binding Path=Sx, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_ix" Style="{StaticResource textBox}" Text="{Binding Path=i_x, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="tb_iy" Style="{StaticResource textBox}" Text="{Binding Path=i_y, ValidatesOnExceptions=true, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <Button x:Name="btnAdd" Content="Добавить" Grid.ColumnSpan="4" Grid.Row="1" Style="{StaticResource ButtonStyle}" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

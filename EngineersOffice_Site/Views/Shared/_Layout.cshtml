@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EngineersOffice_Site</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header class="container header">
+        <object type="image/svg+xml" data="~/img/logo_EngineerOffice.svg" class="header-logo" object-alt="logo">
+            <img src="~/img/logo_EngineerOffice.png" alt="logo">
+        </object>
+        <nav id="menu" class="header-nav-menu">
+            <ul class="header-nav-list">
+                <li class="header-nav-item">
+                    <a href="~/Home" class="header-nav-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Главная
+                    </a>
+                </li>
+                <li class="header-nav-item">
+                    <a href="~/Home#howWeWork" class="header-nav-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Этапы
+                    </a>
+                </li>
+                <li class="header-nav-item">
+                    <a href="~/Calculations" class="header-nav-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Расчеты онлайн
+                    </a>
+                </li>
+                <li class="header-nav-item">
+                    <a href="~/Library" class="header-nav-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Библиотека
+                    </a>
+                </li>
+                <li class="header-nav-item">
+                    <a href="~/Contacts" class="header-nav-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Контакты
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <partial name="_LoginPartial.cshtml" />
+    </header>
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="container footer">
+        <div class="footer-left">
+            <object type="image/svg+xml" data="~/img/logo_EngineerOffice_white.svg" class="footer-logo" object-alt="logo">
+                <img src="~/img/logo_EngineerOffice.png" alt="logo" class="footer-logo">
+            </object>
+            <ul class="footer-left-list">
+                <li class="footer-left-list-item">
+                    <a href="~/Home" class="footer-left-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        О нас
+                    </a>
+                </li>
+                <li class="footer-left-list-item">
+                    <a href="~/Home/GetFile_dogovor" class="footer-left-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Договор
+                        <div class="footer-left-icon">
+                            <i class="fas fa-file-pdf fa-1x"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="footer-left-list-item">
+                    <a href="~/Home/GetFile_partner" class="footer-left-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Конфиденциальность
+                        <div class="footer-left-icon">
+                            <i class="fas fa-file-pdf fa-1x"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="footer-left-list-item">
+                    <a href="~/Home/GetFile_privacy" class="footer-left-link hover-stroke-engineer_orange hover-engineer_orange-color focus-engineer_green-outline">
+                        Партнерское соглашение
+                        <div class="footer-left-icon">
+                            <i class="fas fa-file-pdf fa-1x"></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-rigth">
+            <div class="footer-right-head">
+                Сообщество:
+            </div>
+            <div class="footer-right-social">
+                <a href="https://telegram.org/" class="footer-right-icon focus-engineer_green-outline hover-engineer_orange-color hover-stroke-engineer_orange">
+                    <object type="image/svg+xml" data="~/img/icon_telegram.svg" class="icon_telegram"></object>
+                    https://telegram.org/
+                </a>
+                <a href="https://vk.com/" class="footer-right-icon focus-engineer_green-outline hover-engineer_orange-color hover-stroke-engineer_orange">
+                    <object type="image/svg+xml" data="~/img/icon_vk.svg" class="icon_vk"></object>
+                    https://vk.com/
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    
+</body>
+</html>

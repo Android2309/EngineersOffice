@@ -1,0 +1,79 @@
+﻿@model EngineersOffice_Library.Models.TraverseModels.TraverseBendingModel
+
+
+ 
+<form asp-antiforgery="true"
+      asp-controller="Calculations"
+      asp-action="_TraverseBendingView"
+      id="resultBending"
+      data-ajax-method="GET"
+      data-ajax="true"
+      data-ajax-update="#resultBending"
+      data-ajax-loading="#loader"
+      class="calculations-traverse-form">
+
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="calculations-traverse-form-inputRaw">
+        <label asp-for="G" class="calculations-traverse-label">Масса груза (т): G<sub>0</sub> = </label>
+        <input type="text" asp-for="G" class="calculations-traverse-input" />
+    </div>
+    <span asp-validation-for="G" class="text-danger"></span>
+
+    <div class="calculations-traverse-form-inputRaw">
+        <label asp-for="Length" class="calculations-traverse-label">Длина траверсы (см): L = </label>
+        <input type="text" asp-for="Length" class="calculations-traverse-input" />
+    </div>
+    <span asp-validation-for="Length" class="text-danger"></span>
+
+    <div class="calculations-traverse-form-inputRaw">
+        <label asp-for="R" class="calculations-traverse-label">Предел текучести стали (МПа): σ<sub>т</sub> = </label>
+        <input type="text" asp-for="R" class="calculations-traverse-input" />
+    </div>
+    <span asp-validation-for="R" class="text-danger"></span>
+
+    <button type="submit" class="calculations-btn hover-engineer_orange-backgroundcolor" >Расчитать</button>
+
+    <div class="calculations-traverse-result">
+        <button class="calculationsResult-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBendingResult" aria-expanded="false" aria-controls="collapseResult">
+            Посмотреть расчет:
+        </button>
+
+        <div class="collapse" id="collapseBendingResult">
+            <ul class="calculations-traverse-list card card-body">
+                <li class="calculations-traverse-list-item">
+                    <span>1. Нагрузка, действующая на траверсу(кН):</span>
+                    <span>P = 10G<sub>0</sub>K<sub>p</sub>K<sub>d</sub> = 10 × @Model.G × @Model.Kp × @Model.Kd = @String.Format("{0:f}", Model.P) кН</span>
+                </li>
+                <li class="calculations-traverse-list-item">
+                    <span>2. Изгибающий момент в траверсе (кН×см):</span>
+                    <span>M = PL/4 = @String.Format("{0:f}", Model.P) × @Model.Length / 4 = @String.Format("{0:f}", Model.M)  </span>
+                </li>
+                <li class="calculations-traverse-list-item">
+                    <span>3. Требуемый момент сопротивления поперечного сечения травресы (см<sup>3</sup>):</span>
+                    <span>W<sub>x</sub> = M/(m0,1σ<sub>т</sub>)= @String.Format("{0:f}", Model.M) / (@Model.m × 0,1 × @Model.R)= @String.Format("{0:f}", Model.Wx)см<sup>3</sup></span>
+                </li>
+            </ul>
+        </div>
+
+        <span>Результат:</span>
+        @if (Model.Wx == 0)
+        {
+            <span class="calculations-traverse-result-Wx">По данным характеристикам профиль не найден</span>
+        }
+        else if (Model.beam != null)
+        {
+
+            <span>W<sub>x</sub> >= @String.Format("{0:f}", Model.Wx)см<sup>3</sup></span>
+            <span class="calculations-traverse-result-Wx">Двутавр @Model.beam.Number ГОСТ26020-83, W<sub>x</sub>=@String.Format("{0:f}", Model.beam.Wx)см<sup>3</sup></span>
+        }
+        else
+        {
+            <span class="calculations-traverse-result-Wx">Что-то пошло не так,( измените входные параметры</span>
+        }
+
+
+
+        <div class="loader hide" id="loader"></div>
+    </div>
+</form>

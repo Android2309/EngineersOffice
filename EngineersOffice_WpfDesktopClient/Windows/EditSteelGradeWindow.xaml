@@ -1,0 +1,50 @@
+﻿<Window x:Class="EngineersOffice_WpfDesktopClient.Windows.EditSteelGradeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EngineersOffice_WpfDesktopClient.Windows"
+        mc:Ignorable="d"
+ Title="Изменить сталь" Height="300" Width="400" MinHeight="300" MinWidth="400" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="textBlock">
+            <Setter Property="Margin" Value="0 10 0 0"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="textBox">
+            <Setter Property="Margin" Value="5 10 5 0"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <TextBlock Text="Марка стали:" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Предел текучести (МПа):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Предел прочности (МПа):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Относительное удлинение (%):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Относительное сужение (%):" Style="{StaticResource textBlock}"/>
+            <TextBlock Text="Твердость(HB):" Style="{StaticResource textBlock}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <TextBox x:Name="tbSteelGrade" Style="{StaticResource textBox}"/>
+            <TextBox x:Name="tbYeildStress" Style="{StaticResource textBox}"/>
+            <TextBox x:Name="tbTensileStrength" Style="{StaticResource textBox}"/>
+            <TextBox x:Name="tbElongation" Style="{StaticResource textBox}"/>
+            <TextBox x:Name="tbContraction" Style="{StaticResource textBox}"/>
+            <TextBox x:Name="tbHB" Style="{StaticResource textBox}"/>
+        </StackPanel>
+        <Button x:Name="btnEdit" Content="Изменить" Grid.ColumnSpan="2" Grid.Row="1" Style="{StaticResource ButtonStyle}" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

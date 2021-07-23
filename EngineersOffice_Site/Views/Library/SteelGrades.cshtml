@@ -1,0 +1,89 @@
+﻿@using EngineersOffice_Library.Models
+@model IEnumerable<EngineersOffice_Library.Models.SteelGrade>
+@{
+    Layout = "_LayoutLibrary";
+}
+
+<h1>Марочник сталей</h1>
+
+<p>
+    <a asp-action="SteelGrade_Create">Добавить</a>
+</p>
+<form asp-controller="Library" asp-action="SteelGrades">
+    <p>
+        Марка стали: <input type="text" name="searchString" />
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YieldStress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TensileStrength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Elongation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contraction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HB)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SteelGrade item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YieldStress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TensileStrength)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Elongation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contraction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HB)
+                </td>
+                <td>
+                    <a asp-action="SteelGrade_Edit"  
+                       asp-route-id="@item.Id" 
+                       asp-route-grade="@item.Grade"
+                       asp-route-yieldStress="@item.YieldStress"
+                       asp-route-tensileStrength="@item.TensileStrength"
+                       asp-route-elongation="@item.Elongation"
+                       asp-route-contraction="@item.Contraction"
+                       asp-route-hB="@item.HB">
+                        Изменить
+                    </a> |
+                    <a asp-action="SteelGrade_Delete"  
+                       asp-route-id="@item.Id" 
+                       asp-route-grade="@item.Grade"
+                       asp-route-yieldStress="@item.YieldStress"
+                       asp-route-tensileStrength="@item.TensileStrength"
+                       asp-route-elongation="@item.Elongation"
+                       asp-route-contraction="@item.Contraction"
+                       asp-route-hB="@item.HB">
+                        Удалить
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

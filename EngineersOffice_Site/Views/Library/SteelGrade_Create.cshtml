@@ -1,0 +1,56 @@
+﻿@model EngineersOffice_Library.Models.SteelGrade
+
+@{
+    Layout = "_LayoutLibrary";
+}
+
+<h1>Добавить</h1>
+
+<h4>Сталь</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SteelGrade_Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Grade" class="control-label"></label>
+                <input asp-for="Grade" class="form-control" />
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YieldStress" class="control-label"></label>
+                <input asp-for="YieldStress" class="form-control" />
+                <span asp-validation-for="YieldStress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TensileStrength" class="control-label"></label>
+                <input asp-for="TensileStrength" class="form-control" />
+                <span asp-validation-for="TensileStrength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Elongation" class="control-label"></label>
+                <input asp-for="Elongation" class="form-control" />
+                <span asp-validation-for="Elongation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contraction" class="control-label"></label>
+                <input asp-for="Contraction" class="form-control" />
+                <span asp-validation-for="Contraction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HB" class="control-label"></label>
+                <input asp-for="HB" class="form-control" />
+                <span asp-validation-for="HB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="SteelGrades">Назад</a>
+</div>
+
+

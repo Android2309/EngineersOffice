@@ -1,0 +1,29 @@
+﻿@model EngineersOffice_Library.Models.VolumeModels.Ball
+
+
+
+<form asp-antiforgery="true"
+      asp-controller="Calculations"
+      asp-action="_BallView"
+      data-ajax-method="POST"
+      data-ajax="true"
+      data-ajax-update="#resultBall"
+      data-ajax-mode="update"
+      class="calculations-volume-form"
+      id="resultBall">
+
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="calculations-volume-inputRaw">
+        <label asp-for="Radius" >r = </label>
+        <input type="text" asp-for="Radius" class="calculations-volume-input"/>
+    </div>
+    <span asp-validation-for="Radius" class="text-danger"></span>
+    <button type="submit" class="calculations-btn hover-engineer_orange-backgroundcolor">Расчитать</button>
+    <div class="calculations-volume-result">
+        <div>Результат: V = <span>@Model.Volume</span></div>
+    </div>
+</form>
+
+
+
+

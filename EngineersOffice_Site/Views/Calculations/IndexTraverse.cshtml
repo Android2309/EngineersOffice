@@ -1,0 +1,26 @@
+﻿@using EngineersOffice_Library.Models.TraverseModels
+
+@{
+    Layout = "_LayoutCalculations";
+}
+
+
+<h2 class="calculations-title">Расчет траверс</h2>
+<ul class="calculations-traverse-list">
+    <li class="calculations-traverse-item">
+        <h3 class="calculations-traverse-item-title">Расчет на изгиб</h3>
+        <div class="calculations-traverse-item-data">
+            <img src="~/img/traversa_izgib.png" alt="traverse-model" class="calculations-traverse-designModel"/>
+            @await Html.PartialAsync("~/Views/Calculations/_TraverseBendingView.cshtml", new TraverseBendingModel())
+        </div>
+    </li>
+    <li class="calculations-traverse-item">
+        <h3 class="calculations-traverse-item-title">Расчет на сжатие</h3>
+        <div class="calculations-traverse-item-data">
+            <img src="~/img/traversa_szhatie.png" alt="traverse-model" class="calculations-traverse-designModel"/>
+            @await Html.PartialAsync("~/Views/Calculations/_TraverseCompressionView.cshtml", new TraverseCompressionModel())
+        </div>
+    </li>
+</ul>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>

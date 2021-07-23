@@ -1,0 +1,57 @@
+﻿@model EngineersOffice_Library.Models.SteelGrade
+
+@{
+    Layout = "_LayoutLibrary";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены что хотите удалить?</h3>
+<div>
+    <h4>Сталь</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YieldStress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YieldStress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TensileStrength)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TensileStrength)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Elongation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Elongation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contraction)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contraction)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HB)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HB)
+        </dd>
+    </dl>
+
+    <form asp-action="SteelGrade_Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="SteelGrades">Назад</a>
+    </form>
+</div>

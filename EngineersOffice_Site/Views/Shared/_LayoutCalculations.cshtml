@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="calculations-container">
+    <section class="section-calcMenu">
+        <ul class="calculation-menu-list">
+            <li class="calculation-list-item">
+                <div class="calculation-list-title">Разделы:</div>
+            </li>
+            <li class="calculation-list-item">
+                <a  asp-controller="Calculations"  asp-action="IndexVolume" class="calculation-list-link hover-engineer_orange-backgroundcolor">Расчет объемов</a>
+            </li>
+            <li class="calculation-list-item">
+                <a asp-controller="Calculations" asp-action="IndexTraverse"  class="calculation-list-link hover-engineer_orange-backgroundcolor">Расчет грузоподъемных траверс</a>
+            </li>
+        </ul>
+    </section>
+    <section class="section-calculations">
+        @RenderBody()
+    </section>
+</div>
+

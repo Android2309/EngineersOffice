@@ -1,0 +1,44 @@
+﻿@using EngineersOffice_Library.Models.VolumeModels
+@{
+    Layout = "_LayoutCalculations";
+}
+
+
+<h2 class="calculations-title">Расчет объемов</h2>
+<ul class="calculations-volume-list">
+    <li class="calculations-volume-item">
+        <h3 class="calculations-volume-item-title">Объем шара</h3>
+        <div class="calculations-volume-item-data">
+            <img src="~/img/shar.png" alt="ball" class="calculations-volume-designModel"/>
+            @await Html.PartialAsync("~/Views/Calculations/_BallView.cshtml", new Ball())
+        </div>
+    </li>
+    <li class="calculations-volume-item">
+        <h3 class="calculations-volume-item-title">Объем куба</h3>
+        <div class="calculations-volume-item-data">
+            <img src="~/img/kub.png" alt="cube" class="calculations-volume-designModel" />
+            @await Html.PartialAsync("~/Views/Calculations/_CubeView.cshtml",new Cube())
+        </div>
+    </li>
+    <li class="calculations-volume-item">
+        <h3 class="calculations-volume-item-title">Объем конуса</h3>
+        <div class="calculations-volume-item-data">
+                <img src="~/img/konus.png" alt="konus" class="calculations-volume-designModel" />
+            @await Html.PartialAsync("~/Views/Calculations/_ConusView.cshtml", new Conus())
+        </div>
+    </li>
+    <li class="calculations-volume-item">
+        <h3 class="calculations-volume-item-title">Объем цилиндра</h3>
+        <div class="calculations-volume-item-data">
+            <img src="~/img/cylinder.png" alt="cylinder" class="calculations-volume-designModel"/>
+            @await Html.PartialAsync("~/Views/Calculations/_CylinderView.cshtml", new Cylinder())
+        </div>
+    </li>
+</ul>
+
+
+
+
+
+
+

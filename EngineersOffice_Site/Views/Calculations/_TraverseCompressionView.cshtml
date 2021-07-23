@@ -1,0 +1,98 @@
+﻿@model EngineersOffice_Library.Models.TraverseModels.TraverseCompressionModel
+
+
+<form asp-antiforgery="true"
+      asp-controller="Calculations"
+      asp-action="_TraverseCompressionView"
+      id="resultCompression"
+      data-ajax-method="GET"
+      data-ajax="true"
+      data-ajax-update="#resultCompression"
+      data-ajax-loading="#loaderCompression"
+      class="calculations-traverse-form">
+
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="calculations-traverse-form-inputRaw">
+        <label asp-for="G" class="calculations-traverse-label">Масса груза (т): G<sub>0</sub> = </label>
+        <input type="text" asp-for="G" class="calculations-traverse-input" />
+    </div>
+    <span asp-validation-for="G" class="text-danger"></span>
+
+    <div class="calculations-traverse-form-inputRaw">
+        <label asp-for="Length" class="calculations-traverse-label">Длина траверсы (см): L = </label>
+        <input type="text" asp-for="Length" class="calculations-traverse-input" />
+    </div>
+    <span asp-validation-for="Length" class="text-danger"></span>
+
+    <div class="calculations-traverse-form-inputRaw">
+        <label asp-for="Alfa" class="calculations-traverse-label">Угол наклона тяги: α = </label>
+        <input type="text" asp-for="Alfa" class="calculations-traverse-input" />
+    </div>
+    <span asp-validation-for="Alfa" class="text-danger"></span>
+
+    <div class="calculations-traverse-form-inputRaw">
+        <label asp-for="R" class="calculations-traverse-label">Предел текучести стали (МПа): σ<sub>т</sub> = </label>
+        <input type="text" asp-for="R" class="calculations-traverse-input" />
+    </div>
+    <span asp-validation-for="R" class="text-danger"></span>
+
+    <button type="submit" class="calculations-btn hover-engineer_orange-backgroundcolor">Расчитать</button>
+
+    @*результат/////////////////////////////////////////////////////////*@
+<div class="calculations-traverse-result" id="resultCompression">
+    <button class="calculationsResult-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConpressResult" aria-expanded="false" aria-controls="collapseResult">
+        Посмотреть расчет:
+    </button>
+    <div class="collapse" id="collapseConpressResult">
+        <ul class="calculations-traverse-list card card-body">
+            <li class="calculations-traverse-list-item">
+                <span>1. Натяжение в канатной подвеске(кН):</span>
+                <span>N = 10G<sub>0</sub>/(2cos(α)) = 10 × @Model.G / (2 × cos(@Model.Alfa)) = @String.Format("{0:f}", Model.N) кН</span>
+            </li>
+            <li class="calculations-traverse-list-item">
+                <span>2. Сжимающее усилие в стержне траверсы(кН):</span>
+                <span>N<sub>1</sub> = 10G<sub>0</sub>K<sub>d</sub>K<sub>p</sub>tan(α)/2 = 10 × @Model.G × @Model.Kd × @Model.Kp × @String.Format("{0:f1}", (Math.Tan(Model.Alfa * 0.017453) / 2)) = @String.Format("{0:f}", Model.N1) кН</span>
+            </li>
+            <li class="calculations-traverse-list-item">
+                <span>3. Требуемая площадь поперечного сечения (см<sup>2</sup>):</span>
+                <span>F<sub>тр</sub> = N<sub>1</sub>/(φ<sub>0</sub>m0.1σ<sub>т</sub>) = @String.Format("{0:f}", Model.N1)  / (@Model.fi_0 × @Model.m × 0.1 × @Model.R) = @String.Format("{0:f3}", Model.F_tr) см<sup>2</sup></span>
+            </li>
+            <li class="calculations-traverse-list-item">
+                <span>4. Расчетная длина стержня (см)</span>
+                <span>l<sub>c</sub> = μl = @Model.mu × @Model.Length = @Model.Lc </span>
+            </li>
+            <li class="calculations-traverse-list-item">
+                <span>5. Гибкость стержня относительно главных плоскостей </span>
+                <span>λ<sub>x</sub> = l<sub>c</sub>/r<sub>x</sub> = @Model.Lc / @String.Format("{0:f3}", Model.r_x) = @String.Format("{0:f3}", Model.Flex_x) < @Model.Flex_lim,</span>
+                <span>λ<sub>y</sub> = l<sub>c</sub>/r<sub>y</sub> = @Model.Lc / @String.Format("{0:f3}", Model.r_y) = @String.Format("{0:f3}", Model.Flex_y) < @Model.Flex_lim</span>
+            </li>
+            <li class="calculations-traverse-list-item">
+                <span>6. Коэффициент продольного изгиба φ</span>
+                <span>φ = @String.Format("{0:f}", Model.fi)</span>
+            </li>
+            <li class="calculations-traverse-list-item">
+                <span>7. Проверка на устойчивость</span>
+                <span>N/(Fφ) ⩽ mσ<sub>т</sub></span>
+                <span>@String.Format("{0:f}", Model.N1) / (@String.Format("{0:f}", Model.F) × @Model.fi) ⩽ @Model.m × @Model.R</span>
+                <span>@String.Format("{0:f}", (Model.N1 / (Model.F * Model.fi) * 10)) ⩽ @(Model.m * Model.R)</span>
+            </li>
+        </ul>
+    </div>
+
+
+    <span>Результат: </span>
+    @if (Model.Wx == 0)
+    {
+        <span class="calculations-traverse-result-Wx">По данным характеристикам профиль не найден</span>
+    }
+    else
+    {
+        <span>W<sub>x</sub> >= @String.Format("{0:f}", Model.Wx)см<sup>3</sup></span>
+        <span class="calculations-traverse-result-Wx">Двутавр @Model.beam.Number ГОСТ26020-83, W<sub>x</sub>=@String.Format("{0:f1}", Model.beam.Wx)см<sup>3</sup></span>
+    }
+
+
+    <div class="loader hide" id="loaderCompression"></div>
+</div>
+</form>

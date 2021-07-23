@@ -1,0 +1,12 @@
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\bin\Debug\net5.0\EngineersOffice_Library.deps.json
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\bin\Debug\net5.0\EngineersOffice_Library.dll
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\bin\Debug\net5.0\ref\EngineersOffice_Library.dll
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\bin\Debug\net5.0\EngineersOffice_Library.pdb
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\EngineersOffice_Library.csproj.AssemblyReference.cache
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\EngineersOffice_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\EngineersOffice_Library.AssemblyInfoInputs.cache
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\EngineersOffice_Library.AssemblyInfo.cs
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\EngineersOffice_Library.csproj.CoreCompileInputs.cache
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\EngineersOffice_Library.dll
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\ref\EngineersOffice_Library.dll
+C:\WorkingDirectory\портфолио\EngineersOffice\EngineersOffice_Library\obj\Debug\net5.0\EngineersOffice_Library.pdb
