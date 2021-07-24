@@ -36,13 +36,13 @@
 }
 
 html {
-    position: relative;
-    background-color: #e5e5e5 !important;
+    position: relative !important;
+    background-color: white;
     font-family: "Montserrat-semibold", "Arial", sans-serif !important;
-    min-height:100%;
+    min-height: 100%;
 }
 body {
-    background-color: #e5e5e5 !important;
+    background-color: white;
     font-family: "Montserrat-semibold", "Arial", sans-serif !important;
 }
 
@@ -382,6 +382,7 @@ ul {
 }
 
 .howWeWork-btn {
+    position:relative;
     outline: none;
     border: 0;
     height: 50px;
@@ -391,9 +392,16 @@ ul {
     color: white;
 }
 
+.howWeWork-btn-text {
+    position:absolute;
+    top:25%;
+    width:100%;
+    text-align:center;
+}
+
 .howWeWork-pic {
     margin-top: 35px;
-    width:50%;
+    width: 50%;
 }
 
 .howWeWork-img {
@@ -622,16 +630,12 @@ ul {
 /* account (login, register) /////////////////////////////////////////////////////*/
 .container-account {
     margin-top: 15px;
-    margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom:230px;
     position: relative;
     max-width: 400px;
     background-color: white;
-}
-
-.container-onePageBody {
-    height: 70vh;
 }
 
 .card-header-tabs {
@@ -1030,6 +1034,7 @@ ul {
     }
 
     .footer {
+        transform: translateY(-100px);
         padding: 15px 50px 15px 50px;
     }
 

@@ -18,9 +18,12 @@
                         <p class="slider-info-decrtiption">
                             Есть над чем задуматься: экономие времени на разработке напрямую влияет на качество продукта
                         </p>
-                        <button class="slider-btn focus-engineer_green-outline hover-engineer_orange-backgroundcolor ">
-                            Перейти к расчетам
-                        </button>
+                        <form asp-controller="Calculations" asp-action="Index">
+                            <button type="submit" class="slider-btn focus-engineer_green-outline hover-engineer_orange-backgroundcolor">
+                                Перейти к расчетам
+                            </button>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -48,9 +51,12 @@
                         <p class="slider-info-decrtiption">
                             При регистрации в личном кабинете - получите бесплатную консультацию лучших специалистов и доступ к нашей библиотеке
                         </p>
-                        <button class="slider-btn focus-engineer_green-outline hover-engineer_orange-backgroundcolor">
-                            Перейти к регистрации
-                        </button>
+                        <form asp-area="Identity" asp-page="/Account/Register">
+                            <button class="slider-btn focus-engineer_green-outline hover-engineer_orange-backgroundcolor">
+                                Перейти к регистрации
+                            </button>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -181,17 +187,23 @@
                 <span class="howWeWork-description-head">Регистрация на сайте</span> <br>
                 Зарегистрируйтесь на нашем сайте - получите бесплатную консультацию наших специалистов и доступ к нашей библиотеке.
             </p>
-            <button class="howWeWork-btn tab-content tab-content-active focus-engineer_green-outline hover-engineer_orange-backgroundcolor" data-target="one">
-                Перейти к регистрации
-            </button>
+            <form asp-area="Identity" asp-page="/Account/Register">
+                <button class="howWeWork-btn tab-content tab-content-active focus-engineer_green-outline hover-engineer_orange-backgroundcolor" data-target="one">
+                    Перейти к регистрации
+                </button>
+            </form>
+
 
             <p class="howWeWork-description-text tab-content" data-target="two">
                 <span class="howWeWork-description-head">Техническое задание</span> <br>
                 Заполните форму технического задания. Наши сотрудники свяжутся с Вами в ближайшее время.
             </p>
-            <button class="howWeWork-btn tab-content focus-engineer_green-outline hover-engineer_orange-backgroundcolor" data-target="two">
-                Скачать форуму ТЗ
-            </button>
+            <a href="~/Home/GetFile_dogovor" class="howWeWork-btn tab-content focus-engineer_green-outline hover-engineer_orange-backgroundcolor" data-target="two">
+                <div class="howWeWork-btn-text">Форма ТЗ</div>
+            </a>
+
+
+
 
             <p class="howWeWork-description-text tab-content" data-target="three">
                 <span class="howWeWork-description-head">Составляем смету</span> <br>
